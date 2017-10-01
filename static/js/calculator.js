@@ -1,4 +1,11 @@
-var isNew = false, isEnd = false;;
+var isNew = false, isEnd = false;
+var clearOverflow = function(){
+    var numberBoard = document.getElementById('number');
+    while(numberBoard.scrollWidth > numberBoard.clientWidth){
+        numberBoard.style.fontSize -= 5;
+    }  
+};
+
 function input(data){
     if(isNaN(data)){
         if(data == "C"){
@@ -70,5 +77,6 @@ function input(data){
             return;
         }
         document.getElementById('number').innerHTML += data;
+        clearOverflow();
     }
 };
