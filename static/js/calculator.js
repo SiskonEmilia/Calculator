@@ -22,6 +22,25 @@ function input(data){
             }
             return;
         }
+        if(data == "."){
+            if(isEnd){
+                document.getElementById('operations').innerHTML = "";
+                isEnd = false;
+            }
+            if(document.getElementById('number').innerHTML.includes(".")){
+                return;
+            }
+            document.getElementById('number').innerHTML += ".";
+            return;
+        }
+        if(data == "±"){
+            if(isEnd){
+                document.getElementById('operations').innerHTML = "";
+                isEnd = false;
+            }
+            document.getElementById('number').innerHTML = -document.getElementById('number').innerHTML;
+            return;
+        }
         if(data == "="){
             if(isEnd)
                 return;
