@@ -1,8 +1,9 @@
 var isNew = false, isEnd = false;
 var clearOverflow = function(){
     var numberBoard = document.getElementById('number');
+    var init = 100;
     while(numberBoard.scrollWidth > numberBoard.clientWidth){
-        numberBoard.style.fontSize -= 5;
+        numberBoard.style.fontSize = (init -= 5) + "pt";
     }  
 };
 
