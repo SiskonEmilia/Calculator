@@ -1,5 +1,5 @@
 var isNew = false, isEnd = false;;
-function input(data, button){
+function input(data){
     if(isNaN(data)){
         if(data == "C"){
             document.getElementById('operations').innerHTML = "";
