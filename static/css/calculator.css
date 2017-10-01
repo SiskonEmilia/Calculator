@@ -23,13 +23,31 @@ body{
 .container{
     width: 500px;
     height: 600px;
-    box-shadow: 0 0 2px 2px gray;
+    box-shadow: 0 0 7px 7px gray;
     background-color: rgba(170,170,170,0.5);
 }
 
 .board{
     height: 150px;
     width: 100%;
+    text-align: right;
+    color: white;
+    user-select: none;
+    overflow: hidden;
+}
+
+#operations{
+    padding-right: 2%;
+    height: 20%;
+    font-size: 20pt;
+    line-height: 98%;
+}
+
+#number{
+    height: 80%;
+    font-size: 100pt;
+    line-height: 90%;
+
 }
 
 .button{
@@ -43,8 +61,8 @@ body{
     text-align: center;
     user-select: none;
     transition-property: all;
-    transition-duration: 0.06s;
-    transition-timing-function: ease-in-out;1
+    transition-duration: 0.03s;
+    transition-timing-function: ease-in-out;
 }
 
 .button:hover{
