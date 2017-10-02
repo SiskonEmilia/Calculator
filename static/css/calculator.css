@@ -46,8 +46,8 @@ body{
 #number{
     height: 80%;
     font-size: 100pt;
-    line-height: 90%;
-
+    line-height: 120px;
+    
 }
 
 .button{
