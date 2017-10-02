@@ -9,7 +9,7 @@ This is a simple implentation of calculator~
 1. HTML5 + CSS3 + JS
 1. Node.js
 1. MySQL
-1. Angular.js
+1. AJAX
 
 ## Versions
 

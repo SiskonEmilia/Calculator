@@ -32,7 +32,7 @@ gulp.task('style', function(){
 gulp.task('image', function(){
 	gulp.src('src/images/*.*')
 		.pipe(imagemin())
-		.pipe(gulp.dest('dist/images'));
+		.pipe(gulp.dest('images'));
 });
 
 gulp.task('sass', function(){
@@ -40,7 +40,7 @@ gulp.task('sass', function(){
 		.on('error', function(err){
 			console.error('Error!', err.message)
 		})
-		.pipe(gulp.dest('dist/css'));
+		.pipe(gulp.dest('=css'));
 });
 
 gulp.task('watchjs', function(){
