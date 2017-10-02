@@ -1,9 +1,10 @@
 var isNew = false, isEnd = false;
 var clearOverflow = function(){
     var numberBoard = document.getElementById('number');
-    while(numberBoard.scrollWidth > numberBoard.clientWidth){
-        numberBoard.style.fontSize -= 5;
-    }  
+    var init = 120;
+    do{
+        numberBoard.style.fontSize = (init /= 1.2) + "pt";
+    }while(numberBoard.scrollWidth > numberBoard.clientWidth);
 };
 
 function input(data){
@@ -11,10 +12,12 @@ function input(data){
         if(data == "C"){
             document.getElementById('operations').innerHTML = "";
             document.getElementById('number').innerHTML = "0";
+            clearOverflow();
             return;
         }
         if(data == "CE"){
             document.getElementById('number').innerHTML = "0";
+            clearOverflow();
             if(isEnd){
                 document.getElementById('operations').innerHTML = "";
                 isEnd = false;
@@ -23,6 +26,7 @@ function input(data){
         }
         if(data == "Del"){
             document.getElementById('number').innerHTML = Math.trunc(document.getElementById('number').innerHTML / 10);
+            clearOverflow();
             if(isEnd){
                 document.getElementById('operations').innerHTML = "";
                 isEnd = false;
@@ -55,8 +59,10 @@ function input(data){
                 document.getElementById('operations').innerHTML += document.getElementById('number').innerHTML;
                 document.getElementById('number').innerHTML = eval(document.getElementById('operations').innerHTML);
                 document.getElementById('operations').innerHTML += data;
+                clearOverflow();
             }
             catch(exception){
+                clearOverflow();
                 document.getElementById('number').innerHTML = "INVALID";
             }
             isNew = true;
@@ -73,6 +79,7 @@ function input(data){
         }
         if(document.getElementById('number').innerHTML == "0" || isNew){
             document.getElementById('number').innerHTML = data;
+            clearOverflow();
             isNew = false;
             return;
         }
