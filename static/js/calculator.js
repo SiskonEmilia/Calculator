@@ -1,4 +1,40 @@
 var isNew = false, isEnd = false;
+var OL_Action_Root = "http://127.0.0.1:8888";
+
+function Req_ajax()
+{            
+    $.ajax({
+            data: {
+                info: document.getElementById('operations').innerHTML,
+                type: "post"
+            },
+            url: OL_Action_Root+"/req_cal",
+            dataType: 'json',
+            cache: false,
+            timeout: 5000,
+            type: "post",    // 如果要使用GET方式，则将此处改为'get'
+            success: function(data){
+                var res = data;
+                if(res[0] == 'success')
+                {
+                    document.getElementById('number').innerHTML =  res[1];
+                }
+                else if(res[0] == 'NaN'){
+                    document.getElementById('number').innerHTML = NaN;
+                }
+                else
+                {
+                    console(res[0]);
+                    document.getElementById('number').innerHTML = "INVALID";
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+                alert("Timeout! Please check your network connection!");
+                document.getElementById('number').innerHTML = "0";
+            }
+        });
+};
+
 var clearOverflow = function(){
     var numberBoard = document.getElementById('number');
     var init = 120;
@@ -58,7 +94,7 @@ function input(data){
                 return;
             try{
                 idOpr.innerHTML += idNum.innerHTML;
-                idNum.innerHTML = eval(idOpr.innerHTML);
+                Req_ajax();
                 idOpr.innerHTML += data;
                 clearOverflow();
             }
