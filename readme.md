@@ -12,6 +12,7 @@ This is a simple implentation of calculator~
 1. MySQL
 1. AJAX
 1. JQuery
+1. math.js
 1. gulp
 
 ## Versions

@@ -12,7 +12,7 @@ function Req_ajax()
             dataType: 'json',
             cache: false,
             timeout: 5000,
-            type: "post",    // 如果要使用GET方式，则将此处改为'get'
+            type: "post",
             success: function(data){
                 var res = data;
                 if(res[0] == 'success')
