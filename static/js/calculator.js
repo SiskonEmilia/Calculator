@@ -24,13 +24,12 @@ function Req_ajax()
                 }
                 else
                 {
-                    console(res[0]);
                     document.getElementById('number').innerHTML = "INVALID";
                 }
             },
             error: function(jqXHR, textStatus, errorThrown){
                 alert("Timeout! Please check your network connection!");
-                document.getElementById('number').innerHTML = "0";
+                document.getElementById('number').innerHTML = "TIMEOUT";
             }
         });
 };
@@ -63,6 +62,8 @@ function input(data){
         }
         if(data == "Del"){
             idNum.innerHTML = Math.trunc(idNum.innerHTML / 10);
+            if(idNum.innerHTML == "NaN")
+                idNum.innerHTML = "0";
             clearOverflow();
             if(isEnd){
                 idOpr.innerHTML = "";

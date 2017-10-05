@@ -21,7 +21,7 @@ body{
 }
 
 .container{
-    width: 500px;
+    width: 1125px;
     height: 600px;
     box-shadow: 0 0 7px 7px gray;
     background-color: rgba(170,170,170,0.5);
@@ -63,6 +63,11 @@ body{
     transition-property: all;
     transition-duration: 0.03s;
     transition-timing-function: ease-in-out;
+}
+
+.forbidden{
+    border: 2px solid rgba(150,150,150,1);
+    background-color: rgba(150,150,150,1);
 }
 
 .button:hover{
