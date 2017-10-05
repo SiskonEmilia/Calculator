@@ -1,4 +1,5 @@
-var isNew = false, isEnd = false;
+var isNew = false, isEnd = false, isFunc = false;
+var tempOpr = "", tempNum = "";
 var OL_Action_Root = "http://127.0.0.1:8888";
 
 function Req_ajax()
@@ -28,8 +29,8 @@ function Req_ajax()
                 }
             },
             error: function(jqXHR, textStatus, errorThrown){
-                alert("Timeout! Please check your network connection!");
                 document.getElementById('number').innerHTML = "TIMEOUT";
+                alert("Timeout! Please check your network connection!");
             }
         });
 };
