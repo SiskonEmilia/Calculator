@@ -9,11 +9,20 @@ This is a simple implentation of calculator~
 1. HTML5 + CSS3 + JS
 1. Node.js
 1. Express
-1. MySQL
+1. MySQL*
 1. AJAX
 1. JQuery
 1. math.js
 1. gulp
+
+## Expected features
+
+1. User-friendly Interface
+1. High Accuracy Algorithm
+1. Scientific Calculation
+1. Cilent-Server mode
+1. Account system*
+1. Specific syntax*
 
 ## Versions
 
@@ -22,5 +31,10 @@ This is a simple implentation of calculator~
 1. Construct a server based on node.js
 1. Construct a basic web page
 1. Connect frontend with server
-1. //Construct a database for users info using MySQL
-1. //Connect server and database 
+1. Support High Accuracy Algorithm
+1. Support Scientific Calculation
+1. Construct a database for users info using MySQL*
+1. Connect server and database* 
+
+
+* '*' --haven't achieve

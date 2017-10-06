@@ -1,68 +1,68 @@
 <!DOCTYPE>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>
-            Calculator Demo version
-        </title>
-        <link rel="stylesheet" type="text/css" href="css/calculator.css">
-        <script src="js/jquery-3.2.1.min.js"></script>
-        <script src="js/calculator.js"></script>
-    </head>
-    <body>
-        <div class="container">
-            <div class="board">
-                <div id="operations"></div>
-                <div id="number">0</div>
-            </div>
-            <div class="buttons">
-                <div class="button" onclick="input(this.innerHTML);">x^2</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">x^y</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">sin</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">cos</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">tan</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">CE</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">C</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">Del</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">/</div><br/>
-                <div class="button" onclick="input(this.innerHTML);">x^3</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">y√x</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">arcsin</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">arccos</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">arctan</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">7</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">8</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">9</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">*</div><br/>
-                <div class="button" onclick="input(this.innerHTML);">√</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">10^x</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">log</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">Exp</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">Mod</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">4</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">5</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">6</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">-</div><br/>
-                <div class="button" onclick="input(this.innerHTML);">1/x</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">e^x</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">ln</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">π</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">deg</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">1</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">2</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">3</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">+</div><br/>
-                <div class="button forbidden">---</div><!--
-                --><div class="button forbidden">---</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">n!</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">(</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">)</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">±</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">0</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">.</div><!--
-                --><div class="button" onclick="input(this.innerHTML);">=</div><!--
-                -->
-            </div>
-        </div>
-    </body>
+  <head>
+      <meta charset="utf-8" />
+      <title>
+          Calculator Demo version
+      </title>
+      <link rel="stylesheet" type="text/css" href="css/calculator.css">
+      <script src="js/jquery-3.2.1.min.js"></script>
+      <script src="js/calculator.js"></script>
+  </head>
+  <body>
+      <div class="container">
+          <div class="board">
+              <div id="operations"></div>
+              <div id="number">0</div>
+          </div>
+          <div class="buttons">
+              <div class="button" onclick="input(this.innerHTML);">x^2</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">x^y</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">sin</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">cos</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">tan</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">CE</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">C</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">Del</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">/</div><br/>
+              <div class="button" onclick="input(this.innerHTML);">x^3</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">y√x</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">asin</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">acos</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">atan</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">7</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">8</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">9</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">*</div><br/>
+              <div class="button" onclick="input(this.innerHTML);">√</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">10^x</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">log</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">Exp</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">deg</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">4</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">5</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">6</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">-</div><br/>
+              <div class="button" onclick="input(this.innerHTML);">1/x</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">e^x</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">ln</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">π</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">%</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">1</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">2</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">3</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">+</div><br/>
+              <div class="button forbidden">---</div><!--
+              --><div class="button forbidden">---</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">n!</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">(</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">)</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">±</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">0</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">.</div><!--
+              --><div class="button" onclick="input(this.innerHTML);">=</div><!--
+              -->
+          </div>
+      </div>
+  </body>
 </html>

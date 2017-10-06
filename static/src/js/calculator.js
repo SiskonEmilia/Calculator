@@ -1,3 +1,4 @@
+/*jshint esversion: 6*/
 var isNew = false, isEnd = false, isFunc = 0;
 var isPow = false, isExp = false, isDeg = false, isLev = 0;
 var isOpr = true, isRot = false;

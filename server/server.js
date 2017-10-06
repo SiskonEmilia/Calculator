@@ -9,6 +9,13 @@ math.config({
     number: 'BigNumber'
 });
 
+function ln(a) {
+    return math.eval("log(" + a + ")/log(e)");
+}
+math.import({
+    ln: ln
+});
+
 app.use(express.static('../static'));
 
 app.all('*', function(req, res, next) {
@@ -29,12 +36,17 @@ app.get("/", function(req, res){
 app.post('/req_cal', urlencodedParser, function(req, res){
     var type = req.body.type;
     var info = req.body.info;
+    info = info.replace(/π/g, "pi");
     try{
-        var result = math.eval(req.body.info);
+        var result = math.eval(info);
         console.log(result);
         console.log("Require received! Type of which is " + type + ", and info in which is " + info + ". \nResult: " + result);
-        if(isFinite(result))
-            res.json(['success', "" + result]);
+        if(isFinite(result)){
+            if((result + "").length > 19)
+                res.json(['success', result.toPrecision(18) + ""]);
+            else
+                res.json(['success', result + ""]);
+        }
         else
             res.json(['NaN']);
     }

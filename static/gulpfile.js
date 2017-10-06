@@ -16,10 +16,16 @@ var combiner = require('stream-combiner2');
 // module to catch errors in compassing
 var sourcemaps = require('gulp-sourcemaps');
 // module to help debuging JavaScript & CSS files
+var babel = require('gulp-babel');
+
 
 gulp.task('script', function(){
 	gulp.src('src/js/*.js')
+		.pipe(babel({
+			presets: ['es2015']
+		}))
 		.pipe(uglify())
+		.on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
 		.pipe(gulp.dest('js'));
 });
 
