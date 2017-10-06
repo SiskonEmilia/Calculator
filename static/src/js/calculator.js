@@ -194,8 +194,8 @@ function input(data) {
           clearOverflow();
           idNum.innerHTML = "INVALID";
         }
-        isNew = isEnd = isPow = isExp = isDeg = isLev = isRot = false;
-        isOpr = true;
+        isNew = isPow = isExp = isDeg = isLev = isRot = false;
+        isOpr = isEnd = true;
         break;
       case "(":
         if (isEnd) {
@@ -301,6 +301,10 @@ function input(data) {
         isNew = false;
         break;
       case "Exp":
+        if (isEnd) {
+          idOpr.innerHTML = "";
+          isEnd = false;
+        }
         clearFunc();
         if (isExp)
           break;
@@ -327,6 +331,10 @@ function input(data) {
         idNum.innerHTML = "π";
         break;
       case "y√x":
+        if (isEnd) {
+          idOpr.innerHTML = "";
+          isEnd = false;
+        }
         autoFill();
         if (isPow || isRot || !isOpr) {
           if (isRot)

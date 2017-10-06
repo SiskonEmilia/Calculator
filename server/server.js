@@ -30,7 +30,7 @@ app.all('*', function(req, res, next) {
 app.get("/", function(req, res){
     res.writeHead(200,{"Content-Type":"text/html"})
     res.end(fs.readFileSync("../static/html/calculator.html"));
-    console.log('Someone has just visited our website!');
+    console.log('Someone has just visited our home page!');
 });
 
 app.post('/req_cal', urlencodedParser, function(req, res){
@@ -39,9 +39,9 @@ app.post('/req_cal', urlencodedParser, function(req, res){
     info = info.replace(/π/g, "pi");
     try{
         var result = math.eval(info);
-        console.log(result);
-        console.log("Require received! Type of which is " + type + ", and info in which is " + info + ". \nResult: " + result);
-        if(isFinite(result)){
+        console.log("Require received! Type of which is " + type + ", and info in which is " + info + ".");
+        console.log("Result: " + result + " sent successfully.");
+        if(!isNaN(result)){
             if((result + "").length > 19)
                 res.json(['success', result.toPrecision(18) + ""]);
             else
@@ -51,7 +51,8 @@ app.post('/req_cal', urlencodedParser, function(req, res){
             res.json(['NaN']);
     }
     catch(excepetion){
-        console.log('Fail: ' + info);
+        console.log('Fail to calculate: ' + info);
+        console.log('Error message sent.');
         res.json(['failure']);
     }
     res.end();
@@ -59,5 +60,5 @@ app.post('/req_cal', urlencodedParser, function(req, res){
 
 
 var server = app.listen(8888, function () {
-    console.log('Listening');
+    console.log('Listening at http://localhost:8888/...');
 });
