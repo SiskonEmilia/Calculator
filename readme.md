@@ -59,4 +59,4 @@ This is a simple implentation of calculator~
 
 ---
 
-* '*' --haven't achieve
+* '*' --haven't achieved
