@@ -51,12 +51,15 @@ gulp.task('sass', function(){
 
 gulp.task('watchjs', function(){
 	gulp.watch('src/js/**/*.js', function(event){
-		var paths = watchPath(event, 'src/', '');
+		var paths = watchPath(event, 'src', '');
 		gutil.log(gutil.colors.green(event.type) + ' ' + paths.srcPath)
 		gutil.log(paths.distPath);
 
 		combiner.obj([gulp.src(paths.srcPath)
 			,sourcemaps.init()
+			,babel({
+				presets: ['es2015']
+			})
 			,uglify()
 			,sourcemaps.write('./')
 			,gulp.dest(paths.distDir)]).on('error', function(err){
@@ -73,7 +76,7 @@ gulp.task('watchjs', function(){
 
 gulp.task('watchcss', function(){
 	gulp.watch('src/css/**/*.css', function(event){
-		var paths = watchPath(event, 'src/', '');
+		var paths = watchPath(event, 'src', '');
 		gutil.log(gutil.colors.green(event.type) + ' ' + paths.srcPath)
 		gutil.log(paths.distPath);
 
@@ -95,7 +98,7 @@ gulp.task('watchcss', function(){
 
 gulp.task('watchimage', function(){
 	gulp.watch('src/images/**/*.*', function(event){
-		var paths = watchPath(event, 'src/', '');
+		var paths = watchPath(event, 'src', '');
 		gutil.log(gutil.colors.green(event.type) + ' ' + paths.srcPath)
 		gutil.log(paths.distPath);
 
@@ -112,7 +115,7 @@ gulp.task('watchimage', function(){
 
 gulp.task('watchsass', function(){
 	gulp.watch('src/sass/**/*', function(event){
-		var paths = watchPath(event, 'src/sass/', 'css/');
+		var paths = watchPath(event, 'src/sass', 'css/');
 		gutil.log(gutil.colors.green(event.type) + ' ' + paths.srcPath)
 		gutil.log(paths.distPath);
 

@@ -80,6 +80,9 @@ var clearOverflow = function () {
 
 function input(data) {
   var idNum = document.getElementById('number'), idOpr = document.getElementById('operations');
+  if(isNaN(idNum.innerHTML)){
+    idNum.innerHTML = "0";
+  }
   if (isNaN(data)) {
     switch (data) {
       case "C":
@@ -169,6 +172,12 @@ function input(data) {
           idNum.innerHTML = "π";
         else
           idNum.innerHTML = -idNum.innerHTML;
+
+        if(!isFinite(idNum.innerHTML)){
+          alert("The number is too large.");
+          idNum.innerHTML = NaN;
+          break;
+        }
 
         for (let i = 0; i < isLev; ++i)
           idNum.innerHTML += "!";
@@ -378,6 +387,7 @@ function input(data) {
     clearFunc();
     if (isEnd) {
       idOpr.innerHTML = "";
+      idNum.innerHTML = "0";
       isEnd = false;
     }
     if (idNum.innerHTML == "0" || isNew) {
